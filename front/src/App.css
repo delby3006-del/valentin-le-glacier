@@ -1,5 +1,6 @@
 :root {
-  --color-background: #3a2510;
+  --color-background: #3c2610;
+  --color-background-secondary: hsl(30, 56%, 21%);
   --color-secondary: #fdfaf4;
   --color-text: #c8a878;
   --color-text-secondary: black;

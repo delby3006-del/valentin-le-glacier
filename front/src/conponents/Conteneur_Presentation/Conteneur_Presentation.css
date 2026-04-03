@@ -3,14 +3,5 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
   width: 100%;
-}
-
-.image-presentation {
-  max-width: 400px;
-  height: auto;
-  margin-bottom: 20px;
-  background-color: var(--color-background);
-  border-radius: 10px;
 }
