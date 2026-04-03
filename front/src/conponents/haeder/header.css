@@ -24,30 +24,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 70px;
   height: 75px;
   width: 100%;
-  p {
-    margin-right: 30px;
-    background-color: #4a7a50;
-    padding: 15px 20px;
-    color: white;
-    font-weight: 700;
-    border-radius: 10px;
-  }
+  position: relative;
+  overflow: visible;
+  padding-left: 360px;
+  box-sizing: border-box;
 }
+
 .logo-valentin {
   width: 230px;
   height: auto;
-  margin-left: 30px;
+  position: absolute;
+  left: 30px;
+  top: -40px;
+  z-index: 10;
 }
 .nav {
   display: flex;
-  gap: 70px;
+  flex-grow: 5;
   justify-content: space-between;
-  a {
-    text-decoration: none;
-    color: var(--color-text-secondary);
-    font-size: 16px;
-    font-weight: 500;
-  }
+}
+.nav a {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+}
+.barre-nav p {
+  margin-right: 30px;
+  background-color: #4a7a50;
+  padding: 15px 20px;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
 }
