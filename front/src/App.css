@@ -4,6 +4,7 @@
   --color-secondary: #fdfaf4;
   --color-text: #c8a878;
   --color-text-secondary: black;
+  --color-text-tertiary: #b5843a;
 }
 body {
   margin: 0;

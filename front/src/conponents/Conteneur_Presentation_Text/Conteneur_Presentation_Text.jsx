@@ -4,12 +4,12 @@ export default function Conteneur_Presentation_Text() {
   return (
     <div className="conteneur-presentation-text">
       <h1 className="titre-presentation">
-        Bienvenue dans notre magasin de glaces !
+        Valentin <br />
+        <span className="dancing-script">le glacier</span>
       </h1>
-      <p className="description-presentation">
-        Découvrez notre sélection de glaces artisanales, préparées avec des
-        ingrédients de qualité supérieure.
-      </p>
+      <h2 className="description-presentation">
+        Des glaces & sorbets 100% biologiques & artisanales
+      </h2>
     </div>
   );
 }

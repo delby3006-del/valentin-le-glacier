@@ -1,12 +1,16 @@
 import "./App.css";
-import Header from "./conponents/haeder/header";
-import Page_accueil from "./pages/Page_accueil";
+import Header from "./conponents/Haeder/Header.jsx";
+import Page_accueil from "./pages/Page_accueil.jsx";
 
 function App() {
   return (
-    <div className="header">
-      <Header />
-      <Page_accueil />
+    <div>
+      <div className="header">
+        <Header />
+      </div>
+      <div className="main">
+        <Page_accueil />
+      </div>
     </div>
   );
 }
