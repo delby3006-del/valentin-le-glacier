@@ -6,25 +6,48 @@
   height: 690px;
   position: relative;
   top: -16px;
-  margin-left: 30px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-text-quaternary);
 }
 .titre-presentation {
   font-family: "Playfair", serif;
   font-weight: 400;
   font-size: 5rem;
   margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
 }
 
-.dancing-script {
+.titre-secondary {
   font-family: "Playfair", serif;
   font-weight: 400;
   font-style: italic;
   color: var(--color-text-tertiary);
 }
-.description-presentation {
+.description-presentation,
+.description-secndary {
   font-family: "Dancing Script", cursive;
-  font-weight: 300;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 3px;
+  margin-left: 2rem;
   color: #555;
+}
+
+.description-text {
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 2rem;
+  color: #7a6045;
+  width: 70%;
+}
+
+.btn-decouvrir {
+  background-color: var(--color-background);
+  color: var(--color-text-quaternary);
+  border: none;
+  padding: 20px 50px;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 2rem;
+  margin-top: 20px;
 }

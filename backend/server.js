@@ -1,28 +1,24 @@
 const express = require("express");
 const cors = require("cors");
 
+const glacesRoutes = require("./routes/glaces");
+const granitesRoutes = require("./routes/granites");
+const machinesRoutes = require("./routes/machines");
+const parfumsItaliennesRoutes = require("./routes/parfumsItaliennes");
+const italiennesRoutes = require("./routes/italiennes");
+
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
-// Autoriser le front React à communiquer avec le back
 app.use(cors());
-
-// Pour lire le JSON envoyé depuis le front
 app.use(express.json());
 
-// Route de test
-app.get("/", (req, res) => {
-  res.send("API Valentin Le Glacier en ligne 🍦");
-});
+app.use("/api/glaces", glacesRoutes);
+app.use("/api/granites", granitesRoutes);
+app.use("/api/machines", machinesRoutes);
+app.use("/api/parfums-italiennes", parfumsItaliennesRoutes);
+app.use("/api/italiennes", italiennesRoutes);
 
-// Route API de test
-app.get("/api/test", (req, res) => {
-  res.json({
-    message: "Le serveur fonctionne correctement",
-  });
-});
-
-// Lancement du serveur
 app.listen(PORT, () => {
   console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
