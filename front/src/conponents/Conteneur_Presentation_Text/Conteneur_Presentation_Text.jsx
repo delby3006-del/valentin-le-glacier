@@ -8,10 +8,17 @@ export default function Conteneur_Presentation_Text() {
         Valentin <br />
         <span className="titre-secondary">le glacier</span>
       </h1>
-      <h2 className="description-presentation">
-        Des glaces & sorbets <br className="description-secondary" />
-        100% biologiques & artisanales
-      </h2>
+      <div className="description-presentation-container">
+        <h2 className="description-presentation">
+          Des glaces & sorbets <br className="description-secondary" />
+          100% biologiques & artisanales
+        </h2>
+        <img
+          className="logo-terreadelice"
+          src="/images/logo_terreadelice.png"
+          alt="Logo terre adélice"
+        />
+      </div>
       <p className="description-text">
         Au cœur de Limoges, nous vous accueillons avec des créations glacées
         façonnées artisanalement, avec des ingrédients certifiés bio

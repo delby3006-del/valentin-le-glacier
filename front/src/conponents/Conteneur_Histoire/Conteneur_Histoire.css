@@ -1,0 +1,44 @@
+.conteneur-histoire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+  background-color: var(--color-text-quaternary);
+}
+.titre-conteneur-histoire {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.conteneur-histoire-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  gap: 40px;
+}
+.logo-conteneur-histoire {
+  width: 125px;
+  height: auto;
+  margin: 20px;
+}
+
+.sous-titre-conteneur-histoire {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin: 0px;
+  text-align: center;
+}
+.Notre-histoire {
+  font-size: 22px;
+  color: var(--color-text-primary);
+  text-align: left;
+}
+.text-conteneur-histoire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
