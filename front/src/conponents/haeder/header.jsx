@@ -1,12 +1,12 @@
 import "./Header.css";
-
+import Coordonnees from "../Coordonnees/Coordonnes.jsx";
 export default function Header() {
   return (
     <div>
       <div className="header-coordonnee">
-        <p>📍 40, rue Jean Jaurès — 87 000 Limoges</p>
+        <Coordonnees showTelephone={false} />
         <p className="info-header">🌿 Glaces & Sorbets 100% BIO · Artisanaux</p>
-        <p>📞 tél : 05 55 57 47 33 </p>
+        <Coordonnees showAdresse={false} />
       </div>
       <div className="barre-nav">
         <div className="logo-valentin">

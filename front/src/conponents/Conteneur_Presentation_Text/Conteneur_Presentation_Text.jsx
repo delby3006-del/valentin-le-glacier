@@ -1,4 +1,5 @@
 import "./Conteneur_Presentation_Text.css";
+import Coordonnees from "../Coordonnees/Coordonnes";
 
 export default function Conteneur_Presentation_Text() {
   return (
@@ -17,6 +18,19 @@ export default function Conteneur_Presentation_Text() {
         soigneusement choisis.
       </p>
       <button className="btn-decouvrir">Voir notre carte</button>
+      <div className="separateur"></div>
+      <div className="info-lieux">
+        <div className="divers">
+          <p>Adresse</p>
+          <p>Téléphone</p>
+          <p>Label</p>
+        </div>
+        <div className="info-coordonnees">
+          <Coordonnees showTelephone={false} />
+          <Coordonnees showAdresse={false} />
+          <p>AB · 100% Bio Artisanal</p>
+        </div>
+      </div>
     </div>
   );
 }
