@@ -1,4 +1,4 @@
-import "./Conteneur_Presentation_Images.css";
+import "./Conteneur_Presentation_Images.scss";
 
 export default function Conteneur_Presentation_Images() {
   return (

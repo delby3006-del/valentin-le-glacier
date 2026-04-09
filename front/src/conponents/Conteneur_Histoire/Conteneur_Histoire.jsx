@@ -15,12 +15,13 @@ export default function Conteneur_Histoire() {
         <div className="text-conteneur-histoire">
           <h3 className="sous-titre-conteneur-histoire">Notre histoire</h3>
           <p className="Notre-histoire">
-            dans le domaine du commerce depuis 1992, une nouvelle opportunité
+            Dans le domaine du commerce depuis 1992, une nouvelle opportunité
             c'est ouverte a moi, j'ai donc fait une reconversion professionnelle
             et en juillet 2018 la boutique “Valentin le glacier" à Limoges a vus
-            le jour. a la recherche de fournisseur de crème glacées et de sorbet
-            BIO, nous avons decouvert “terre adélice”.
+            le jour. A la recherche de fournisseur de crème glacées et de
+            sorbets BIO, nous avons decouvert “terre adélice”.
           </p>
+          <hr className="separateur-histoire" />
         </div>
       </div>
       <div className="conteneur-histoire-logo">
@@ -39,6 +40,7 @@ export default function Conteneur_Histoire() {
             producteurs locaux, écoconception des emballages, utilisation
             d’électricité 100 % renouvelable, réduction des déchets.
           </p>
+          <hr className="separateur-histoire" />
         </div>
       </div>
     </div>

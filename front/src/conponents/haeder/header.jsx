@@ -18,8 +18,8 @@ export default function Header() {
           <a href="#">Nos Gourmandises</a>
           <a href="#">Boissons</a>
           <a href="#">Infos Pratiques</a>
+          <p>🌿 100% BIO</p>
         </nav>
-        <p>🌿 100% BIO</p>
       </div>
     </div>
   );

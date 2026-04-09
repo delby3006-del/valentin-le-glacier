@@ -1,0 +1,19 @@
+.titre-conteneur-glaces-creme {
+  font-size: 24px;
+  color: var(--color-text-quaternary);
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.conteneur-glaces-creme-liste {
+  column-count: 2;
+  column-gap: 6rem;
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+.conteneur-glaces-creme-liste li {
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
