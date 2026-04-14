@@ -4,9 +4,9 @@ import Conteneur_Presentation_Text from "../Conteneur_Presentation_Text/Conteneu
 
 export default function Conteneur_Presentation() {
   return (
-    <div className="conteneur-presentation">
+    <section className="conteneur-presentation" id="conteneur-presentation">
       <Conteneur_Presentation_Images />
       <Conteneur_Presentation_Text />
-    </div>
+    </section>
   );
 }

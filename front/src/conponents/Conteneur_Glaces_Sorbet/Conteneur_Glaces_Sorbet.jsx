@@ -10,7 +10,7 @@ export default function GlacesSorbetActives() {
     const chargerGlaces = async () => {
       try {
         const response = await fetch(
-          "http://192.168.1.14:3001/api/sorbets-actives",
+          "http://localhost:3001/api/sorbets-actives",
         );
 
         if (!response.ok) {

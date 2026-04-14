@@ -1,4 +1,3 @@
-// Variables (tu peux les mettre dans un fichier global plus tard)
 $mobile: 768px;
 $tablette: 1024px;
 
@@ -15,7 +14,6 @@ $tablette: 1024px;
   position: relative;
   overflow: hidden;
 
-  // 📱 MOBILE FIRST
   .deuxieme-font-image-glace {
     background-color: var(--color-background-secondary);
     border-radius: 50%;
@@ -50,7 +48,6 @@ $tablette: 1024px;
     z-index: 2;
   }
 
-  // 📱 TABLETTE
   @media (min-width: $mobile) {
     height: 500px;
 
@@ -59,7 +56,6 @@ $tablette: 1024px;
     }
   }
 
-  // 💻 DESKTOP
   @media (min-width: $tablette) {
     width: 50%;
     height: 690px;

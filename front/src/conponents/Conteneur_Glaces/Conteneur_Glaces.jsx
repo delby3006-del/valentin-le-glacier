@@ -4,11 +4,11 @@ import GlacesSorbetActives from "../Conteneur_Glaces_Sorbet/Conteneur_Glaces_Sor
 
 export default function Conteneur_Glaces() {
   return (
-    <div className="conteneur-glaces">
+    <section className="conteneur-glaces" id="conteneur-glaces">
       <div className="conteneur-glaces-fond">
         <div className="conteneur-glaces-colone">
           <h2 className="titre-conteneur-glaces">NOTRE SÉLECTION</h2>
-          <p className="text-conteneur-glaces">Nos Parfums du Moment</p>
+          <h3 className="text-conteneur-glaces">Nos Parfums du Moment</h3>
           <p className="bio-conteneur-glaces">
             🌿 Agriculture Biologique certifiée
           </p>
@@ -28,6 +28,6 @@ export default function Conteneur_Glaces() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,6 +2,7 @@ import Conteneur_Presentation from "../conponents/Conteneur_Presentation/Contene
 import BandeauDefilant from "../conponents/Bandeau_Deroulant/Bandeau_Deroulant";
 import Conteneur_Histoire from "../conponents/Conteneur_Histoire/Conteneur_Histoire";
 import Conteneur_Glaces from "../conponents/Conteneur_Glaces/Conteneur_Glaces";
+import Conteneur_Gourmandises from "../conponents/Conteneur_Gourmandises/Conteneur_Gourmandises";
 
 export default function Page_accueil() {
   return (
@@ -10,6 +11,7 @@ export default function Page_accueil() {
       <BandeauDefilant />
       <Conteneur_Histoire />
       <Conteneur_Glaces />
+      <Conteneur_Gourmandises />
     </div>
   );
 }

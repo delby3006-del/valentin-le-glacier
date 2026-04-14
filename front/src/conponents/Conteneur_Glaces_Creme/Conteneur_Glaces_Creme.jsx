@@ -10,7 +10,7 @@ export default function GlacesCremesActives() {
     const chargerGlaces = async () => {
       try {
         const response = await fetch(
-          "http://192.168.1.14:3001/api/cremes-actives",
+          "http://localhost:3001/api/cremes-actives",
         );
 
         if (!response.ok) {
