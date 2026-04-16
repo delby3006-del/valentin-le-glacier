@@ -9,6 +9,7 @@ const italiennesRoutes = require("./routes/italiennes");
 const cremesActivesRoutes = require("./routes/cremes-actives");
 const sorbetsActivesRoutes = require("./routes/sorbets-actives");
 const gourmandisesRoutes = require("./routes/gourmandises");
+const connexionRoutes = require("./routes/connexion");
 
 const app = express();
 const PORT = 3001;
@@ -24,6 +25,7 @@ app.use("/api/italiennes", italiennesRoutes);
 app.use("/api/cremes-actives", cremesActivesRoutes);
 app.use("/api/sorbets-actives", sorbetsActivesRoutes);
 app.use("/api/gourmandises", gourmandisesRoutes);
+app.use("/api/connexion", connexionRoutes);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`→ Local     : http://localhost:${PORT}`);

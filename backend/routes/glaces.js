@@ -18,23 +18,6 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/actives", (req, res) => {
-  const sql = `
-    SELECT g.id_glace, g.nom_glace, g.bio, t.nom_type
-    FROM glaces g
-    JOIN types t ON g.id_type = t.id_type
-    WHERE g.actif = 1
-    ORDER BY g.nom_glace ASC
-  `;
-
-  db.all(sql, [], (err, rows) => {
-    if (err) {
-      return res.status(500).json({ erreur: err.message });
-    }
-    res.json(rows);
-  });
-});
-
 router.post("/", (req, res) => {
   const { nom_glace, id_type, bio, actif } = req.body;
 

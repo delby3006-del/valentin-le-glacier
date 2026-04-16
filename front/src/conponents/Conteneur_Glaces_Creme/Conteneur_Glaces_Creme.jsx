@@ -28,6 +28,12 @@ export default function GlacesCremesActives() {
     };
 
     chargerGlaces();
+
+    const interval = setInterval(() => {
+      chargerGlaces();
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) return <p>Chargement...</p>;

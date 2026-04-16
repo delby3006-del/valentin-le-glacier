@@ -1,11 +1,12 @@
 import "./Header.css";
 import Coordonnees from "../Coordonnees/Coordonnes.jsx";
-export default function Header() {
+import { Link } from "react-router-dom";
+
+export default function Header({ mode = "site" }) {
   const scrollTo = (id) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
 
-    // enlève le # de l'URL
     window.history.replaceState(null, "", window.location.pathname);
   };
 
@@ -19,42 +20,60 @@ export default function Header() {
 
       <div className="barre-nav">
         <div className="logo-valentin">
-          <img src="/images/logo_valentin.png" alt="Logo valentin le glacier" />
+          <Link to={mode === "admin" ? "/" : "/login"}>
+            <img
+              src="/images/logo_valentin.png"
+              alt="Logo Valentin le glacier"
+            />
+          </Link>
         </div>
 
         <nav className="nav" aria-label="Navigation principale">
-          <a
-            href="#conteneur-histoire"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo("conteneur-histoire");
-            }}
-          >
-            Notre Histoire
-          </a>
+          {mode === "admin" ? (
+            <>
+              <Link to="/admin/histoire">Notre Histoire</Link>
+              <Link to="/admin/glaces">Nos Parfums</Link>
+              <Link to="/admin/gourmandises">Nos Gourmandises</Link>
+              <Link to="/admin/boissons">Boissons</Link>
+              <Link to="/admin/infos">Infos Pratiques</Link>
+            </>
+          ) : (
+            <>
+              <a
+                href="#conteneur-histoire"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo("conteneur-histoire");
+                }}
+              >
+                Notre Histoire
+              </a>
 
-          <a
-            href="#conteneur-glaces"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo("conteneur-glaces");
-            }}
-          >
-            Nos Parfums
-          </a>
+              <a
+                href="#conteneur-glaces"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo("conteneur-glaces");
+                }}
+              >
+                Nos Parfums
+              </a>
 
-          <a
-            href="#section-gourmandises"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo("section-gourmandises");
-            }}
-          >
-            Nos Gourmandises
-          </a>
+              <a
+                href="#section-gourmandises"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo("section-gourmandises");
+                }}
+              >
+                Nos Gourmandises
+              </a>
 
-          <a href="#">Boissons</a>
-          <a href="#">Infos Pratiques</a>
+              <a href="#boissons">Boissons</a>
+              <a href="#infos-pratiques">Infos Pratiques</a>
+            </>
+          )}
+
           <p>🌿 100% BIO</p>
         </nav>
       </div>

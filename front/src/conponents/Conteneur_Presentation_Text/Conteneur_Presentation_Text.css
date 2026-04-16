@@ -81,7 +81,6 @@
 .info-coordonnees {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 30px;
   align-items: start;
 }
 
@@ -104,7 +103,6 @@
 
 .info-coordonnees p {
   font-size: 13px;
-  font-weight: 400;
   color: var(--color-text-secondary);
   text-align: center;
   font-family: "DM Sans", sans-serif;

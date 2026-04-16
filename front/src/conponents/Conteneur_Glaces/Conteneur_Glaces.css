@@ -20,7 +20,7 @@
 }
 
 .text-conteneur-glaces {
-  color: white;
+  color: var(--color-text-quaternary);
   font-size: 44px;
   text-align: center;
   margin: 0px;
@@ -65,4 +65,5 @@
   font-size: 20px;
   font-weight: 700;
   color: var(--color-text-tertiary-bis);
+  text-shadow: 0.1em 0.1em rgb(94, 94, 94);
 }

@@ -4,7 +4,7 @@ import "./Conteneur_Gourmandises.css";
 const accompagnements = [
   "Nature",
   "Chantilly maison",
-  "Pâte à tartiner * bio *",
+  "Pâte à tartiner bio ",
   "Boule de glace",
   "Nutella",
   "Sauce chocolat maison",
@@ -16,13 +16,27 @@ export default function Conteneur_Gourmandises() {
   const [gourmandisesActives, setGourmandisesActives] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/gourmandises")
-      .then((res) => res.json())
-      .then((data) => {
+    const chargerGourmandises = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/api/gourmandises");
+
+        if (!res.ok) {
+          throw new Error("Erreur serveur");
+        }
+
+        const data = await res.json();
         console.log("Données gourmandises :", data);
         setGourmandisesActives(data);
-      })
-      .catch((error) => console.error("Erreur gourmandises :", error));
+      } catch (error) {
+        console.error("Erreur gourmandises :", error);
+      }
+    };
+
+    chargerGourmandises();
+
+    const interval = setInterval(chargerGourmandises, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const afficherGaufre = gourmandisesActives.some(

@@ -16,4 +16,5 @@ body {
   padding: 0;
   font-family: "dm-sans", sans-serif;
   background-color: var(--color-secondary);
+  width: 100%;
 }
