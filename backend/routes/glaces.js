@@ -3,69 +3,80 @@ const router = express.Router();
 const db = require("../db");
 
 router.get("/", (req, res) => {
-  const sql = `
-    SELECT g.id_glace, g.nom_glace, g.bio, g.actif, t.nom_type
-    FROM glaces g
-    JOIN types t ON g.id_type = t.id_type
-    ORDER BY g.nom_glace ASC
+  const { actif, id_type } = req.query;
+
+  let sql = `
+    SELECT g.id_glace, g.nom_glace, g.bio, g.actif, g.id_type, t.nom_type
+    FROM glaces_parfums g
+    JOIN glaces_type t ON g.id_type = t.id_type
+    WHERE 1=1
   `;
 
-  db.all(sql, [], (err, rows) => {
+  const params = [];
+
+  if (actif !== undefined) {
+    sql += ` AND g.actif = ?`;
+    params.push(actif);
+  }
+
+  if (id_type !== undefined) {
+    sql += ` AND g.id_type = ?`;
+    params.push(id_type);
+  }
+
+  sql += ` ORDER BY g.nom_glace ASC`;
+
+  db.all(sql, params, (err, rows) => {
     if (err) {
+      console.error("Erreur SQL :", err.message);
       return res.status(500).json({ erreur: err.message });
     }
+
     res.json(rows);
   });
 });
 
-router.post("/", (req, res) => {
-  const { nom_glace, id_type, bio, actif } = req.body;
-
-  const sql = `
-    INSERT INTO glaces (nom_glace, id_type, bio, actif)
-    VALUES (?, ?, ?, ?)
-  `;
-
-  db.run(sql, [nom_glace, id_type, bio ?? 1, actif ?? 1], function (err) {
-    if (err) {
-      return res.status(500).json({ erreur: err.message });
-    }
-    res.json({
-      message: "Glace ajoutée",
-      id_glace: this.lastID,
-    });
-  });
-});
-
 router.put("/:id", (req, res) => {
+  console.log("ID reçu :", req.params.id);
+  console.log("BODY reçu :", req.body);
+
   const { id } = req.params;
-  const { nom_glace, id_type, bio, actif } = req.body;
+
+  if (!req.body) {
+    return res.status(400).json({
+      succes: false,
+      erreur: "Body manquant",
+    });
+  }
+
+  const { actif } = req.body;
+
+  if (actif === undefined) {
+    return res.status(400).json({
+      succes: false,
+      erreur: "actif manquant",
+    });
+  }
 
   const sql = `
-    UPDATE glaces
-    SET nom_glace = ?, id_type = ?, bio = ?, actif = ?
+    UPDATE glaces_parfums
+    SET actif = ?
     WHERE id_glace = ?
   `;
 
-  db.run(sql, [nom_glace, id_type, bio, actif, id], function (err) {
+  db.run(sql, [Number(actif), Number(id)], function (err) {
     if (err) {
-      return res.status(500).json({ erreur: err.message });
+      console.error("Erreur SQL :", err.message);
+      return res.status(500).json({
+        succes: false,
+        erreur: err.message,
+      });
     }
-    res.json({ message: "Glace modifiée" });
-  });
-});
 
-router.patch("/:id/actif", (req, res) => {
-  const { id } = req.params;
-  const { actif } = req.body;
-
-  const sql = `UPDATE glaces SET actif = ? WHERE id_glace = ?`;
-
-  db.run(sql, [actif, id], function (err) {
-    if (err) {
-      return res.status(500).json({ erreur: err.message });
-    }
-    res.json({ message: "Disponibilité modifiée" });
+    res.json({
+      succes: true,
+      message: "État mis à jour",
+    });
   });
 });
 

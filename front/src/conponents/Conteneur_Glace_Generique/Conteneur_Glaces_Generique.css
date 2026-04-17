@@ -1,20 +1,25 @@
-.titre-conteneur-glaces-sorbet {
+.titre-conteneur-glaces-type {
   font-size: 24px;
   color: var(--color-text-quaternary);
-  margin-bottom: 45px;
+  margin: 15px;
   text-align: center;
   text-shadow: 0.1em 0.1em rgb(94, 94, 94);
 }
 
-.conteneur-glaces-sorbet-liste {
+.conteneur-glaces-liste {
   column-count: 2;
   column-gap: 6rem;
   list-style: none;
   padding: 0;
 }
-.conteneur-glaces-sorbet-liste li {
+.conteneur-glaces-liste li {
   font-family: "DM Sans", sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   margin-bottom: 20px;
   color: var(--color-text-quaternary);
+}
+
+.checkbox {
+  margin-right: 1rem;
+  accent-color: var(--color-encadrement);
 }

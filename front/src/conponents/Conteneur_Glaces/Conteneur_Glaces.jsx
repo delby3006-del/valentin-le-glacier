@@ -1,6 +1,7 @@
 import "./Conteneur_Glaces.css";
-import GlacesCremesActives from "../Conteneur_Glaces_Creme/Conteneur_Glaces_Creme";
-import GlacesSorbetActives from "../Conteneur_Glaces_Sorbet/Conteneur_Glaces_Sorbet";
+// import GlacesCremesActives from "../Conteneur_Glaces_Creme/Conteneur_Glaces_Creme";
+// import GlacesSorbetActives from "../Conteneur_Glaces_Sorbet/Conteneur_Glaces_Sorbet";
+import ConteneurGlaces from "../Conteneur_Glace_Generique/Conteneur_Glaces_Generique";
 
 export default function Conteneur_Glaces() {
   return (
@@ -14,16 +15,16 @@ export default function Conteneur_Glaces() {
           </p>
           <section className="section-conteneur-glaces">
             <div className="conteneur-glaces-parfumes">
-              <GlacesCremesActives />
+              <ConteneurGlaces idType={1} actif={1} titre="🍦 Crèmes Glacées" />
             </div>
 
             <div className="conteneur-glaces-parfumes">
-              <GlacesSorbetActives />
+              <ConteneurGlaces idType={2} actif={1} titre="🍧 Sorbets" />
             </div>
           </section>
           <div className="conteneur-glaces-emporter">
             <p className="text-conteneur-glaces-emporter">
-              📦 PLUS UN LARGE CHOIX ½ LITRE À EMPORTER
+              PLUS UN LARGE CHOIX ½ LITRE À EMPORTER
             </p>
           </div>
         </div>

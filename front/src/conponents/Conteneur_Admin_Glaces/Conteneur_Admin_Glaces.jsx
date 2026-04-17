@@ -1,19 +1,26 @@
 import "./Conteneur_Admin_Glaces.css";
-import GlacesCremesAdmin from "../Conteneur_Admin_Glaces_Creme/Conteneur_Admin_Glaces_Creme";
-import GlacesSorbetsAdmin from "../Conteneur_Admin_Glaces_Sorbet/Conteneur_Admin_Glaces_Sorbet";
+import ConteneurGlaces from "../Conteneur_Glace_Generique/Conteneur_Glaces_Generique";
 
-export default function Conteneur_Glaces() {
+export default function Conteneur_Admin_Glaces() {
   return (
-    <section className="conteneur-admin-glaces" id="conteneur-glaces">
-      <div className="conteneur-admin-glaces-fond">
-        <div className="conteneur-admin-glaces-colone">
-          <section className="section-admin-conteneur-glaces">
-            <div className="conteneur-admin-glaces-parfumes">
-              <GlacesCremesAdmin />
+    <section className="conteneur-glaces" id="conteneur-glaces">
+      <div className="conteneur-glaces-fond">
+        <div className="conteneur-glaces-colone">
+          <section className="section-conteneur-glaces">
+            <div className="conteneur-glaces-parfumes">
+              <ConteneurGlaces
+                idType={1}
+                titre="🍦 Crèmes Glacées"
+                afficherCheckbox={true}
+              />
             </div>
 
-            <div className="conteneur-admin-glaces-parfumes">
-              <GlacesSorbetsAdmin />
+            <div className="conteneur-glaces-parfumes">
+              <ConteneurGlaces
+                idType={2}
+                titre="🍧 Sorbets"
+                afficherCheckbox={true}
+              />
             </div>
           </section>
         </div>
