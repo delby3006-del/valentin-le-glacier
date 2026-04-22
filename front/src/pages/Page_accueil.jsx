@@ -3,6 +3,7 @@ import BandeauDefilant from "../conponents/Bandeau_Deroulant/Bandeau_Deroulant";
 import Conteneur_Histoire from "../conponents/Conteneur_Histoire/Conteneur_Histoire";
 import Conteneur_Glaces from "../conponents/Conteneur_Glaces/Conteneur_Glaces";
 import Conteneur_Gourmandises from "../conponents/Conteneur_Gourmandises/Conteneur_Gourmandises";
+import Conteneur_Boissons from "../conponents/Conteneur_Boissons/Conteneur_Boissons";
 import Header from "../conponents/Haeder/Header";
 
 export default function Page_accueil() {
@@ -14,6 +15,7 @@ export default function Page_accueil() {
       <Conteneur_Histoire />
       <Conteneur_Glaces />
       <Conteneur_Gourmandises />
+      <Conteneur_Boissons />
     </div>
   );
 }

@@ -13,16 +13,19 @@ export default function Logeur() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3001/api/connexion", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/connexion`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            motDePasse,
+          }),
         },
-        body: JSON.stringify({
-          email,
-          motDePasse,
-        }),
-      });
+      );
 
       const data = await response.json();
 

@@ -57,15 +57,18 @@ export default function ConteneurGlaces({
 
       const nouvelleValeur = Number(actifActuel) === 1 ? 0 : 1;
 
-      const response = await fetch(`http://localhost:3001/api/glaces/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/glaces/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            actif: nouvelleValeur,
+          }),
         },
-        body: JSON.stringify({
-          actif: nouvelleValeur,
-        }),
-      });
+      );
 
       const data = await response.json();
       console.log("Réponse du serveur :", data);
@@ -90,7 +93,7 @@ export default function ConteneurGlaces({
 
   return (
     <div className="conteneur-glaces-colone">
-      <h3 className="titre-conteneur-glaces-type">{titre}</h3>
+      <h4 className="titre-conteneur-glaces-type">{titre}</h4>
       <ul className="conteneur-glaces-liste">
         {glaces.map((glace) => (
           <li key={glace.id_glace} className="ligne-glace">
